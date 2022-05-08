@@ -1,16 +1,18 @@
 <template>
   <div>
-    <div v-for="home in homes" :key="home.objectID">
-    <img :src='home.images[0]' style="width:200px"><br>
-    {{ home.title}}<br>
+    <div v-for="home in homes" :key="home.objectID" style="float:left; margin:10px;">
+    <home-card :home="home"/>
     </div>
   </div>
 </template>
 <script>
-import { once } from 'events'
-import homes from '../data/homes.json'
+import homes from '~/data/homes.json'
+import HomeCard from '~/components/HomeCard'
 
 export default {
+  components: {
+    HomeCard,
+  },
   data(){
     return {
       homes: homes.slice(0,3)
