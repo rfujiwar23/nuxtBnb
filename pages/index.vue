@@ -7,11 +7,18 @@
 </template>
 <script>
 import homes from '~/data/homes.json'
-import HomeCard from '~/components/HomeCard'
+
 
 export default {
-  components: {
-    HomeCard,
+  head(){
+    return {
+      title: 'Homepage',
+      meta: [{
+        name: 'description',
+        content: 'This is a site',
+        hid: 'description'
+      }]
+    }
   },
   data(){
     return {
